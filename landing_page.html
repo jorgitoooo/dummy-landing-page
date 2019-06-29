@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Landing Page</title>
+	
+	<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Open+Sans:300|Rammetto+One|Rajdhani" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style type="text/css">
+	:root {
+		--L-color: #1b96b8;
+		--L-darker: #097496;
+		--ts-color: #ff7d76;
+		--htp-color: limegreen;
+		--au-color: #e86af0;
+	}
+
+	html {
+		position: absolute;
+		scroll-behavior: smooth;
+	}
+
+	body {
+		background-color: var(--L-color);
+
+		height: 100%;
+	}
+
+	a {
+		color: #fff;
+		font-family: 'Open Sans', sans-serif;
+		text-decoration: none;
+	}
+
+	p {
+		font-family: 'Open Sans', sans-serif;
+		color: white;
+	}
+
+	h1 {
+		font-family: sans-serif;
+		font-size: 80px;
+		color: white;
+	}
+
+	header {
+		display: block;
+		position: fixed;
+		top: 0px;
+		left: 0px;
+
+		width: 100%;
+		height: 40px;
+
+		background-color: #000;
+
+		z-index: 100;
+	}
+
+	#nav-bar {
+		width: 100%;
+		height: 40px;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	#logo-link {
+		position: absolute;
+
+		top: 0;
+		left:-15px;
+
+		font-family: 'Rajdhani', sans-serif;
+		font-size: 18px;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		text-align: left;
+
+		width: 75px;
+		height: 35px;
+
+		margin-top: 3px;
+		margin-left: 30px;
+	}
+
+	#logo-link:hover {opacity: 0.9;}
+
+	#L {
+		position: absolute;
+
+		margin: auto;
+
+		top: 2.5px;
+		right: 7px;
+		bottom: 2.5px;
+
+		height: 30px;
+		width: 11px;
+
+		background-color: var(--L-color);
+	}
+
+	#L:after {
+		content: "";
+
+		position: absolute;
+
+		margin: auto;
+
+		bottom: 0;
+		right: -7px;
+
+		height: 11px;
+		width: 17px;
+
+		background-color: var(--L-color);
+	}
+
+	#top-right-nav {
+		margin: 0 0 0 auto;
+	}
+
+	#top-right-nav ul {
+		display: flex;
+		align-items: stretch;
+
+		margin-top: 0px;
+	}
+
+	.nav-link {
+		list-style: none;
+		
+		padding-top: 8px;
+		margin: 0;
+	}
+
+	.nav-link a {padding: 9.8px;}
+
+	nav .nav-link a:hover {
+		cursor: pointer;
+	}
+
+	#the-set:hover {
+		color: var(--ts-color);
+	}
+
+	#how-to-play:hover {
+		color: var(--htp-color);
+	}
+
+	#about-us:hover {
+		color: var(--au-color);
+	}
+
+	#bars-bg {
+		position: absolute;
+
+		width: 40px;
+		height: 40px;
+
+		right: 10px;
+		top: 0px;
+
+		z-index: 101;
+
+		/*visibility: hidden;*/
+	}
+
+	#bars-bg:hover {
+		opacity: .9;
+	}
+
+	#bars {
+		position: absolute;
+
+		margin: auto;
+
+		border-radius: 2px;
+
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		width: 25px;
+		height: 7px;
+
+		background-color: var(--htp-color);
+	}
+
+	#bars:before {
+		content: "";
+
+		position: absolute;
+
+		margin: -10px auto 0 auto;
+		
+		border-radius: 2px;
+
+		left: 0;
+		right: 0;
+
+		width: 25px;
+		height: 7px;
+
+		background-color: var(--ts-color);
+	}
+
+	#bars:after {
+		content: "";
+
+		position: absolute;
+
+		margin: 0 auto -20px auto;
+
+		border-radius: 2px;
+
+		left: 0;
+		right: 0;
+		bottom: 10px;
+
+		width: 25px;
+		height: 7px;
+
+		background-color: var(--au-color);
+	}
+
+	#X-bg {
+		position: absolute;
+
+		width: 37px;
+		height: 37px;
+
+		right: 11.5px;
+		top: -37.5px;
+
+		z-index: 101;
+
+		background-color: black;
+
+		transition: all .3s ease-in-out;
+
+		z-index: 102;
+		
+		/*
+		'&times; == x'
+		color: white;
+		font-weight: bold;
+		font-size: 25px;*/
+	}
+
+	#X-bg:hover {
+		cursor: pointer;
+	}
+
+	#X-O {
+		position: absolute;
+
+		margin: auto;
+
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		width: 24.5px;
+		height: 24.5px;
+
+		/*border: 2.3px solid #ee2013;*/
+
+		border-radius: 30px;
+		opacity: 1;
+
+		transition: all .3s ease-in-out;
+
+		z-index: 1000;
+	}
+
+	#X-O:hover {
+		opacity: .85;
+	}
+
+	#X {
+		position: absolute;
+
+		margin: auto;
+
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		width: 8px;
+		height: 24px;
+
+		border-radius: 2px;
+
+		transform: rotate(-45deg);
+
+		background-color: #ee4035;
+	}
+
+	#X:after {
+		content: "";
+
+		position: absolute;
+
+		margin: auto;
+
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		width: 8px;
+		height: 24px;
+
+		border-radius: 2px;
+
+		transform: rotate(90deg);
+
+		background-color: #ee4035;
+	}
+
+	#flex-content {
+		width: 100%;
+		height: auto;
+
+		display: flex;
+		flex-direction: column;
+
+		align-items: center;
+	}
+
+	#cta {
+		width: 90%;
+		height: 500px;
+
+		margin: 2% auto 2% 5%;
+
+
+		display: flex;
+		flex-direction: row;
+		align-items: baseline;
+	}
+
+	#cta-desc p {
+		flex: 1 2 auto;
+		font-size: 20px;
+	}
+
+	#cta form {
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto 0 10px;
+
+		flex: 2 1 auto;
+	}
+
+	#cta form > * {
+		margin-top: 20px;
+	}
+	
+
+
+	#email-info {
+		background-color: white;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+
+		width: 300px;
+		height: 250px;
+
+		border-radius: 4px;
+	}
+
+
+	#email-info label {
+		flex: 1 1 auto;
+
+		font-family: sans-serif;
+		font-size: 40px;
+
+		color: var(--L-color);
+
+		padding: 15px;
+	}
+
+	#email {
+		flex: 1 1 auto;
+
+		background: transparent;
+
+		color: white;
+
+		border: none;
+		border-bottom: 2.5px solid orange;
+		border-left: 2.5px solid orange;
+
+		padding: 7px;
+
+		font-family: sans-serif;
+		font-size: 15px;
+		font-weight: bold;
+
+		opacity: .9;
+	}
+
+	#email::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	    color: white;
+	    opacity: 1; /* Firefox */
+	    font-family: sans-serif;
+	}
+
+	#email:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	    color: white;
+	    font-family: sans-serif;
+	}
+
+	#email::-ms-input-placeholder { /* Microsoft Edge */
+	    color: white;
+	    font-family: sans-serif;
+	}
+
+	#submit {
+		width: 100%;
+		height: 50px;
+
+		border: 2px solid;
+		border-radius: 20px;
+
+		background-color: var(--L-color);
+		color: white;
+
+		font-family: sans-serif;
+		font-weight: bold;
+		font-size: 15px;
+	}
+
+	#submit:hover {
+		cursor: pointer;
+
+		background-color: rgba(5,255,161,0.6);
+		/*background-color: rgba(232,106,240,0.5); */
+	}
+
+	#vid-bg {
+		position: absolute;
+
+		top: 675px;
+		right: 0;
+		left: 0;
+
+		width: auto;
+		height: 200px;
+		
+		-ms-transform: skewY(-5deg);
+		-webkit-transform: skewY(-5deg);
+		transform: skewY(-5deg);
+
+		z-index: -1;
+	}
+
+	.bg {
+		right: 0;
+		left: 0;
+		width: auto;
+		height: 33.33%;
+	}
+
+	video {
+		margin-top: 80px;
+		max-width: 90%;
+		/*border-radius: 5px;*/
+		
+		/*border: 0.3px solid var(--L-color);*/
+		border: 0.3px solid white;
+		border-radius: 8px;
+	}
+
+	#prod-bg {
+		position: absolute;
+
+		top: 900px;
+		right: 0;
+		bottom: 50px;
+		left: 0;
+
+		width: auto;
+		height: auto;
+
+		background-color: black;
+		
+		-ms-transform: skewY(5deg);
+		-webkit-transform: skewY(5deg);
+		transform: skewY(5deg);
+
+		z-index: -1;
+
+	}
+
+	#prod-grid {
+		margin-top: 10px;
+		padding: 5% 10px 5% 10px;
+		width: 90%;
+		height: auto;
+
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+		grid-gap: 20px;
+	}
+
+	.prod-cell img {
+		width: 100%;
+		height: auto;
+
+		border: .0002em solid white;
+		border-radius: 3px;
+	}
+
+	.title {
+		font-family: sans-serif;
+		color: white;
+	}
+
+	#piece-1 {
+		position: absolute;
+
+		height: 30px;
+		width: 10px;
+
+		background-color: #ff7d76;
+
+		margin-left: 10px; 
+	}
+
+	#piece-1:after {
+		content: "";
+
+		position: absolute;
+
+		height: 10px;
+		width: 10px;
+
+		margin-top: 10px;
+		margin-left: 10px;
+
+		background-color: #ff7d76;
+	}
+
+	#piece-2 {
+		position: absolute;
+
+		height: 10px;
+		width: 25px;
+
+		margin-top: 15px;
+		margin-left: 10px;
+
+		background-color: lightgreen;
+	}
+
+	#piece-2:after {
+		content: "";
+
+		position: absolute;
+
+		height: 10px;
+		width: 25px;
+
+		margin-left: 14px;
+		margin-top: -10px;
+
+		background-color: lightgreen;
+	}
+
+	#piece-3 {
+		position: absolute;
+
+		height: 10px;
+		width: 30px;
+
+		margin-top: 5px;
+		margin-left: 10px;
+
+		background-color: #e86af0;
+	}
+
+	#piece-3:after {
+		content: "";
+
+		position: absolute;
+
+		height: 10px;
+		width: 10px;
+
+		margin-top: 10px;
+		margin-left: 20px;
+
+		background-color: #e86af0;
+	}
+
+	#foot {
+		display: flex;
+		flex-direction: row;
+		flex: 1 1 auto;
+
+		justify-content: center;
+		align-items: center;
+
+		position: absolute;
+
+		right: 0;
+		bottom: -100px;
+		left: 0;
+
+		width: auto;
+		height: 50px;
+
+		margin-top: 100px;
+
+		background-color: black;
+
+		z-index: -1;
+	}
+
+	#soc-icons-flex {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		width: 200px;
+	}
+
+	@media only screen and (min-width: 750px) {
+		#bars-bg {visibility: hidden;}
+		#X-bg {visibility: hidden;}
+	}
+
+	@media only screen and (max-width: 800px) {
+		#cta h1 {font-size: 70px;}
+	}
+
+	@media only screen and (max-width: 750px) {
+		#top-right-nav-ul {
+			position: relative;
+
+			/**/
+			visibility: hidden;
+			/**/
+			
+			margin-top: 40px;
+			padding-bottom: 15px;
+
+			
+			flex-direction: column;
+			
+			align-items: flex-start;
+			justify-content: space-around;
+			
+			background-color: black;
+		}
+
+		#top-right-nav-ul li {
+			margin-right: 15px;
+		}
+
+		#top-right-nav-ul:target {
+			visibility: visible;
+			opacity: 1;
+
+			margin-top: 40px;
+			animation: menu-pop .5s;
+			animation-fill-mode: forwards;
+		}
+
+		@keyframes menu-pop {
+			0% {
+				right: -200px;
+			}
+
+			100% {
+				right: 0;
+			}
+		}
+
+		#nav-link {
+			position: absolute;
+
+			margin-right: 60px;
+
+			background-color: red;
+		}
+
+		#cta {
+			flex-direction: column;
+			align-items: center;
+
+			/*margin: 2% auto 2% auto;*/
+			margin-left: 10%;
+
+			height: 700px;
+		}
+
+		#cta h1 {font-size: 60px;}
+
+		#cta p {
+			margin-top: -15px;
+			font-size: 15px;
+		}
+
+		#vid-bg {top: 850px;}
+
+		#prod-bg {top: 1050px;}
+
+		#email-info label {font-size: 30px;}
+
+		#submit {height: 60px;}
+
+		#prod-grid {
+			grid-template-columns: auto;
+			grid-gap: 10px;
+		}
+
+		#cell-1 {order: 2;}
+		#cell-2 {order: 1;}
+		#cell-3 {order: 3;}
+		#cell-4 {order: 4;}
+		#cell-5 {order: 6;}
+		#cell-6 {order: 5;}
+	}
+</style>
+</head>
+
+<body>
+	<header id="header">
+		<nav id="nav-bar">
+			<!-- img tag added to pass freecodecamp test -->
+			<img id="header-img" src="#" style="display: none;">
+			<a id="logo-link" href="#cta">
+				Project <span id="L" class="green-txt"></span>
+			</a>
+			<div id="top-right-nav">
+				<ul id="top-right-nav-ul">
+					<a id="X-bg" href="#bars-bg"><span id="X-O"><span id="X"></span></span></a>
+					<li class="nav-link">
+						<a id="the-set" href="#cell-2">The Set</a>
+					</li>
+					<li class="nav-link">
+						<a id="how-to-play" href="#cell-3">How to Play</a>
+					</li>
+					<li class="nav-link">
+						<a id="about-us" href="#cell-6">About us</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<a id="bars-bg" href="#top-right-nav-ul"><span id="bars"></span></a>
+	</header>
+
+	<div id="flex-content">
+		<div id="cta">
+			<div id="cta-desc">
+				<h1>A product landing page<span style="color: orange;">.</span></h1>
+				<p>Lorem ipsum dolor sit amet,<br> consectetur adipisicing elit.</p>
+			</div>
+			<form id="form" action="https://www.freecodecamp.com/email-submit" method="get">
+				<div id="email-info">
+					<label for="email"><strong> Stay up to date with our product.</strong>
+					</label>
+				</div>
+				<input id="email" type="email" name="email" placeholder="Enter email here...">
+				<input id="submit" type="submit" name="Submit" value="Submit">
+			</form>
+		</div>
+		<div id="vid-bg">
+			<div class="bg" style="background-color: #ff7d76;"></div>
+			<div class="bg" style="background-color: lightgreen;"></div>
+			<div class="bg" style="background-color: #e86af0;"></div>
+		</div>
+		<video poster="https://cf.geekdo-images.com/imagepage/img/_Y_CJusDAbH9LjQa7xIuhh5ncII=/fit-in/900x600/filters:no_upscale()/pic4326079.jpg" controls>
+			<source src="https://ksr-video.imgix.net/projects/2619098/video-912513-h264_base.mp4" type="video/mp4">
+		</video>
+		<div id="prod-bg"></div>
+		<div id="prod-grid">
+			<div class="prod-cell" id="cell-1">
+				<img class="prod-img" src="https://cf.geekdo-images.com/imagepagezoom/img/q23fp-LCZvFk32uUGhAG3pLhcVw=/fit-in/1200x900/filters:no_upscale()/pic4316188.jpg">
+			</div>
+			<div class="prod-cell" id="cell-2">
+				<h2 class="title">The Set<span id="piece-1"></span></h2>
+				<p class="prod-desc">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.</p>
+			</div>
+			<div class="prod-cell" id="cell-3">
+				<h2 class="title">How to Play<span id="piece-2"></span></h2>
+				<p class="prod-desc">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.</p>
+			</div>
+			<div class="prod-cell" id="cell-4">
+				<img class="prod-img" src="https://ksr-ugc.imgix.net/assets/022/657/220/a481513abc4858c3e077cda094133ed7_original.gif?ixlib=rb-1.1.0&w=680&fit=max&v=1537792921&auto=format&gif-q=50&q=92&s=f8418f8ff5c8cd13fd83eb8df5eedcb7">
+			</div>
+			<div class="prod-cell" id="cell-5">
+				<img class="prod-img" src="https://ksr-ugc.imgix.net/assets/022/632/095/229f0307bff5e063c1d5b48c0c49be58_original.jpg?ixlib=rb-1.1.0&w=680&fit=max&v=1537541066&auto=format&gif-q=50&q=92&s=0e7a2665dabfceb864cabb0b2e9939b8">
+			</div>
+			<div class="prod-cell" id="cell-6">
+				<h2 class="title">About us<span id="piece-3"></span></h2>
+				<p class="prod-desc">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.</p>
+			</div>
+		</div>
+	</div>
+	<footer id="foot">
+		<div id="soc-icons-flex">
+			<a href="https://www.kickstarter.com/projects/2063846379/project-l?ref=home_new_and_noteworthy" target="_blank" class="fab fa-kickstarter"></a>
+			<a href="#" class="fab fa-facebook-square"></a>
+			<a href="#" class="fab fa-instagram"></a>
+		</div>
+	</footer>
+</body>
+</html>
